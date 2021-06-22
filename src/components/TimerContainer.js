@@ -2,7 +2,7 @@ import React from "react";
 import Timer from "./Timer";
 class TimerContainer extends React.Component {
   state = {
-    seconds: 0,
+    seconds: "0",
     minutes: 0,
     hours: 0,
   };
@@ -32,13 +32,10 @@ class TimerContainer extends React.Component {
   componentDidMount() {
     this.id = setInterval(() => {
       this.setState((state) => {
-        const mins = state.seconds / 60;
-        const hours = state.seconds / 60;
         return {
-          ...state,
-          seconds: state.seconds + 1,
-          minutes: mins.toFixed(0),
-          hours: hours.toFixed(0),
+          seconds: state.seconds === 59 ? 0 : parseInt(state.seconds, 10) + 1,
+          minutes: state.seconds === 59 ? state.minutes + 1 : state.minutes,
+          hours: state.minutes === 59 ? state.hours + 1 : state.hours,
         };
       });
     }, 1000);
