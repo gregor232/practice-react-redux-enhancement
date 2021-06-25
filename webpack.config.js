@@ -30,9 +30,21 @@ module.exports = function (env = {}) {
           // będą brane pod uwagę
           exclude: /node_modules/,
           // określam wykluczenia
-          use: "babel-loader",
+          loader: "babel-loader",
           // określam jaki [loader]
           // ma być wykorzystany
+          options: {
+            presets: [
+              "@babel/preset-env",
+              "@babel/react",
+              {
+                plugins: [
+                  "@babel/plugin-proposal-class-properties",
+                  "@babel/plugin-transform-runtime",
+                ],
+              },
+            ],
+          },
         },
         {
           test: /\.(png|svg|jpg|gif)$/,
