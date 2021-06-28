@@ -26,6 +26,8 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
     font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+
 }
 ol, ul {
 	list-style: none;
@@ -51,7 +53,8 @@ table {
     text-align: center;
     border-radius: 15px;
     color: white;
-    font-size: 2vw;
+    font-size: 2rem;
+    font-weight: bold;
 }
 .welcomePopup__button {
     position: absolute;
@@ -65,4 +68,57 @@ table {
     cursor: pointer;
     font-size: 1.5rem;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.githubList {
+    width: 100%;
+    margin: auto;
+    display:block
+
+}
+.githubList__form {
+    margin:auto;
+    width: 50%;
+}
+.form__inputText {
+width: 30%;
+height: 3vh;
+  display: inline-block;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  margin-left: 1vw;
+}
+.form__inputSubmit {
+    background-color: rgb(237, 237, 237);
+  border: none;
+  color: black;
+  width: 30%;
+  height: 3vh;
+  text-decoration: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  text-align: center;
+  margin-left: 1vw;
+
+}
+.githubList__list {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.githubList__listElement {
+    background-color: rgb(237, 237, 237);
+    width: 35%;
+    height: 5vh;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1vh;
+    line-height: 5vh;
+    transition: .3s;
+}
+.githubList__listElement:hover {
+    background-color: rgb(170, 170, 170);
 }

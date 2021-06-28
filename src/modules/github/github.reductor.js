@@ -23,6 +23,11 @@ const reducers = (state = initState, action) => {
         ...state,
         filteredRepos: state.repos,
       };
+    case "clearRepos":
+      return {
+        repos: [],
+        filteredRepos: [],
+      };
     default:
       return state;
   }

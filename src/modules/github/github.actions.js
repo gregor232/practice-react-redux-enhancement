@@ -21,27 +21,18 @@ const setFiltered = (resp) => {
   };
 };
 
-// const setReposAfter = (resp) => {
-//   console.log(resp);
-//   return {
-//     type: "getReposAfter",
-//     payload: {
-//       repos: resp,
-//     },
-//   };
-// };
-
 const eqRepos = () => {
   return {
     type: "equalRepos",
   };
 };
 
-// const getReposAction = (userName) => {
-//   return function thunk(dispatch, getState) {
-//     return ghApi.getRepos(userName).then((resp) => dispatch(setRepos(resp)));
-//   };
-// };
+const clRepos = () => {
+  return {
+    type: "clearRepos",
+  };
+};
+
 const getReposActionWitValue = (userName, value) => {
   return function thunk(dispatch, getState) {
     return ghApi.getRepos(userName).then((resp) => {
@@ -59,4 +50,4 @@ const getReposActionWitValue = (userName, value) => {
   };
 };
 
-export { setRepos, eqRepos, setFiltered, getReposActionWitValue };
+export { setRepos, eqRepos, setFiltered, getReposActionWitValue, clRepos };
